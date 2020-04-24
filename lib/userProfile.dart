@@ -40,10 +40,13 @@ class _userProfileState extends State<userProfile> {
           children: <Widget>[
             Positioned(
               top: MediaQuery.of(context).size.height * 0.20,
-              child: Container(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
-                color: Colors.white,
+              child: ClipPath(
+                clipper: MyClipper(),
+                child: Container(
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  color: Colors.white,
+                ),
               ),
             ),
             Positioned(
@@ -157,4 +160,28 @@ class _userProfileState extends State<userProfile> {
           ],
         ));
   }
+
+}
+
+class MyClipper extends CustomClipper<Path>{
+
+  @override
+  Path getClip(Size size) {
+    var path = new Path();
+    print(size.height);
+    path.lineTo(0, size.height - 60);
+    path.quadraticBezierTo(size.width/4, size.height, size.width/2, size.height);
+    path.quadraticBezierTo(size.width - (size.width/4), size.height, size.width, size.height-60);
+    path.lineTo(size.width , 0);
+    path.close();
+
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) => true;
+
+
+
 }

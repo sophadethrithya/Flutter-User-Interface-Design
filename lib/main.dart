@@ -1,5 +1,9 @@
+import 'package:demo_app/clipExample.dart';
+import 'package:demo_app/customScrollView.dart';
 import 'package:demo_app/userProfile.dart';
+import 'package:demo_app/userProfiles.dart';
 import 'package:flutter/material.dart';
+import 'demoPage.dart';
 import 'pageOne.dart';
 import 'pageTwo.dart';
 void main() {
@@ -44,8 +48,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     
     return Scaffold(
-      body: userProfile(),
-      backgroundColor: Colors.tealAccent,
+      body: userProfiles(),
+      backgroundColor: Colors.blue,
+
     );
   }
 }
