@@ -1,5 +1,6 @@
 import 'package:demo_app/clipExample.dart';
 import 'package:demo_app/customScrollView.dart';
+import 'package:demo_app/tinder.dart';
 import 'package:demo_app/userProfile.dart';
 import 'package:demo_app/userProfiles.dart';
 import 'package:flutter/material.dart';
@@ -48,8 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     
     return Scaffold(
-      body: userProfiles(),
-      backgroundColor: Colors.blue,
+      body: tinder(),
+      backgroundColor: Color.fromRGBO(255, 56, 91, 1),
 
     );
   }
